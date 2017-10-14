@@ -5,17 +5,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+/**
+ * Created by japjohal on 2017-10-14.
+ */
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var about = (function () {
+    function about() {
     }
-    return AppComponent;
+    return about;
 }());
-AppComponent = __decorate([
+about = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: "\n    <myHome></myHome>   \n    <router-outlet></router-outlet> \n    <date></date>\n    <!--Where the data is displayed from the router-->\n"
+        template: '<br>' +
+            '<div> My About Page</div>'
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], about);
+exports.about = about;
+//# sourceMappingURL=app.about.js.map

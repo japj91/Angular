@@ -6,4 +6,15 @@ h1 {
 
 .Home{
   display: inline-block;
+  font-size: 135%;
+  color: #336699;;
+}
+.date{
+  padding-top: 2vw;
+  font-size: 135%;
+  color: #336699;
+}
+
+ul{
+  list-style: none;
 }

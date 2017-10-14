@@ -12,8 +12,9 @@ var app_component_1 = require("./app.component");
 var app_routing_1 = require("./app.routing");
 var app_FoodItem_1 = require("./app.FoodItem");
 var app_detail_1 = require("./app.detail");
-var app_home_1 = require("./app.home");
+var app_about_1 = require("./app.about");
 var app_homePage_1 = require("./app.homePage");
+var app_date_1 = require("./app.date");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,7 +23,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing],
-        declarations: [app_component_1.AppComponent, app_FoodItem_1.food, app_detail_1.details, app_home_1.about, app_homePage_1.topView],
+        declarations: [app_component_1.AppComponent, app_FoodItem_1.food, app_detail_1.details, app_about_1.about, app_homePage_1.topView, app_date_1.date],
         bootstrap: [app_component_1.AppComponent],
     })
 ], AppModule);

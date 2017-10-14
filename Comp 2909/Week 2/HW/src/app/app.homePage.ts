@@ -13,4 +13,4 @@ import { Component } from '@angular/core';
     <!--Tips for routing set up page export that class import it in app.module and app.routing set paratmers-->
 `
 })
-export class topView { }
+export class topView {}

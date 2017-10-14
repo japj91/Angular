@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   template: `
     <myHome></myHome>   
     <router-outlet></router-outlet> 
+    <date></date>
     <!--Where the data is displayed from the router-->
 `
 })
