@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+    <div>{{type}}</div>
+    <input type="text" pattern="^\d{0,4}(\.\d{0,3}){0,1}$" required
+           [(ngModel)]="var2" name="field1" #field1="ngModel"/>
+
+    {{operator}}
+
+    <input type="text" pattern="^\d{0,4}(\.\d{0,3}){0,1}$" required
+           [(ngModel)]="var3" name="field2" #field2="ngModel"/>
+
+    <button [disabled]="!myForm.form.valid" (click)="calculate()"> =</button>
+
+
+    <p *ngIf="field2?.errors?.pattern || field1?.errors?.pattern" class="error"> Only numbers allowed!</p>
+    <p *ngIf="(field2?.errors?.required && !field2.pristine) || (field1?.errors?.required && !field1.pristine)" class="error"> Field requires a number!</p>
+
+    <p *ngIf="total">{{rounded()}}</p>
+
+</form>
