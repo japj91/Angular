@@ -1,0 +1,18 @@
+
+
+
+<button (click)="postFeedback()">Submit Feedback</button>
+
+<!-- Show result from Post -->
+<div *ngIf="feedbackResponseMsg">{{feedbackResponseMsg}}<br/>
+  {{feedbackResponseStatus}}</div>
+<br/>
+
+<p >
+  Celsuis <input [(ngModel)]="celsuis" class="inp"><br/>
+  <button (click)="convertToF(celsuis)" class="inp">Convert</button><br/>
+</p>
+<p>
+  Farenhit <input class="inp" [(ngModel)]="farenhit"><br/>
+  <button (click)="convertToC(farenhit)" class="inp">Convert</button><br/>
+</p>

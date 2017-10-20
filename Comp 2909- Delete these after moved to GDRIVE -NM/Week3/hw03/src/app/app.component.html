@@ -1,21 +1,2 @@
 <app-menu></app-menu>
-<!-- Submit feedback -->
-Email: <input [(ngModel)]="emailAddress"><br/>
-Feedback:  <input [(ngModel)]="feedbackMsg">
-
-<button (click)="postFeedback()">Submit Feedback</button>
-
-<!-- Show result from Post -->
-<div *ngIf="feedbackResponseMsg">{{feedbackResponseMsg}}<br/>
-  {{feedbackResponseStatus}}</div>
-<br/>
-
-<p class="inp">
- Celsuis <input [(ngModel)]="celsuis"><br/>
-<button (click)="convertToF(celsuis)">Convert</button><br/>
-</p>
-<div></div>
-<p class="inp">
- Farenhit <input [(ngModel)]="farenhit"><br/>
-<button (click)="convertToC(farenhit)">Convert</button><br/>
-</p>
+<router-outlet></router-outlet>
