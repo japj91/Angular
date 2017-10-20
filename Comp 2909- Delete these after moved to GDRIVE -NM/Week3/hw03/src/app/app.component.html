@@ -1,4 +1,4 @@
-
+<app-menu></app-menu>
 <!-- Submit feedback -->
 Email: <input [(ngModel)]="emailAddress"><br/>
 Feedback:  <input [(ngModel)]="feedbackMsg">
@@ -9,9 +9,13 @@ Feedback:  <input [(ngModel)]="feedbackMsg">
 <div *ngIf="feedbackResponseMsg">{{feedbackResponseMsg}}<br/>
   {{feedbackResponseStatus}}</div>
 <br/>
-<button (click)="convertToF()">Get Fahrenheit</button><br/>
-<button (click)="convertToC()">Get Celsius</button><br/>
-`,
-// Providers allow us to inject an object instance through the constructor.
-providers: [MyRemoteService]
 
+<p class="inp">
+ Celsuis <input [(ngModel)]="celsuis"><br/>
+<button (click)="convertToF(celsuis)">Convert</button><br/>
+</p>
+<div></div>
+<p class="inp">
+ Farenhit <input [(ngModel)]="farenhit"><br/>
+<button (click)="convertToC(farenhit)">Convert</button><br/>
+</p>

@@ -12,7 +12,9 @@ import {date }            from './app.date'
 
 @NgModule({
   imports: [BrowserModule, FormsModule, routing],
+
   declarations: [AppComponent,food,details, about,topView,date ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule { }

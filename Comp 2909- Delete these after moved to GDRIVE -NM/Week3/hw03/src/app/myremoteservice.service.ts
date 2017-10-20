@@ -10,14 +10,27 @@ import 'rxjs/add/observable/throw';
 export class MyremoteserviceService {
 
   public site:string;
+  public celsuis:string;
+
   constructor(private http: Http) {
     this.site = "http://ssdsandbox.com/angular2/"
   }
-
-
-  getFahrenheit(): Observable<string[]> {
+  getCelsius(temp:string): Observable<string[]>{
     let content = new URLSearchParams();
-    content.set('c',  '0');
+    content.set('f',temp);
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }); // what is this
+    let options = new RequestOptions({ search: content}); // what is options?
+    let dataUrl = this.site+'api/Celsius';
+
+    return this.http.get(dataUrl,options)
+      .map(this.extractData) // why no paramters or ()
+      .catch(this.handleError);
+
+  }
+
+  getFahrenheit(temp:string): Observable<string[]> {
+    let content = new URLSearchParams();
+    content.set('c',  temp);
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
     let options = new RequestOptions({
       search: content
