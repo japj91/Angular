@@ -44,7 +44,7 @@ export class MyremoteserviceService {
 
   private extractData(res: Response) {
     let body = res.json();
-    return JSON.parse(body) || {};
+    return JSON.parse(body);
   }
 
   private handleError(error: any) {
