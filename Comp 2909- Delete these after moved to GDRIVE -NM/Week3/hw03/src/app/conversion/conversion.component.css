@@ -1,3 +1,11 @@
 .inp{
   display: inline-block;
+  left: 2vw ;
+}
+
+
+.answer{
+  color: forestgreen;
+  font-size: 05vw;
+  padding-top: 4vw;
 }

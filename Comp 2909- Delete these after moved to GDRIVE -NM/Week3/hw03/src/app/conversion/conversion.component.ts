@@ -11,7 +11,9 @@ export class ConversionComponent  {
   names: Array<any>;
   remoteService: MyremoteserviceService;
   celsuis:string;
+  celConverted:string;
   farenhit:string;
+  farConverted:string;
   feedbackResponseMsg: string;
   feedbackResponseStatus: string;
 
@@ -32,9 +34,9 @@ export class ConversionComponent  {
         data => {
           this.names = data
           console.log(JSON.stringify(data))
-          let x = data["Celsius"];
+          let x = Math.round(Number (data["Celsius"]));
           let y = 0;
-          this.celsuis = x;
+          this.farConverted =String(x);
         },
         // Error.
         error => {
@@ -56,9 +58,9 @@ export class ConversionComponent  {
         data => {
           this.names = data
           console.log(JSON.stringify(data))
-          let x = data["Fahrenheit"];
+          let x = Math.round(Number (data["Fahrenheit"]));
           let y = 0;
-          this.farenhit = x;
+          this.celConverted = String(x);
         },
         // Error.
         error => {

@@ -1,18 +1,36 @@
 
+<br>
+
+<div>
+
+  <form #myForm="ngForm">
+    <!--plese note you dotn need ngonsubmit function-->
+
+  Celsuis to Farenhit: <input type="text" pattern="^\d{0,6}$" required [(ngModel)]="celsuis" name="field1" #field1="ngModel" class="inp">
+
+    <!--notice you have required and you have pattern in input field.-->
+
+  <button (click)="convertToF(celsuis)" class="inp"[disabled]="!myForm.form.valid">Convert</button>
+  <p *ngIf="field1?.errors?.pattern">only numbers allowed </p>
+    <!--for the errors their are many required length-->
+
+  </form>
 
 
-<button (click)="postFeedback()">Submit Feedback</button>
+  <div *ngIf="celConverted" class="answer">{{celsuis}} degress Celsius is {{celConverted}} Farenhit</div>
+</div>
 
-<!-- Show result from Post -->
-<div *ngIf="feedbackResponseMsg">{{feedbackResponseMsg}}<br/>
-  {{feedbackResponseStatus}}</div>
-<br/>
 
-<p >
-  Celsuis <input [(ngModel)]="celsuis" class="inp"><br/>
-  <button (click)="convertToF(celsuis)" class="inp">Convert</button><br/>
-</p>
-<p>
-  Farenhit <input class="inp" [(ngModel)]="farenhit"><br/>
-  <button (click)="convertToC(farenhit)" class="inp">Convert</button><br/>
-</p>
+
+<br>
+<br>
+
+<div div="spacing">
+  Farenhit to Celsius <input class="inp" type="text" pattern="^\d{0,6}$" required [(ngModel)]="farenhit" name="field2" #field2="ngModel">
+  <button (click)="convertToC(farenhit)" class="inp" [disabled]="!myForm.form.valid">Convert</button>
+
+  <p *ngIf="field2?.errors?.pattern">only numbers allowed </p>
+  <p *ngIf="(field2?.errors?.required && !field2.pristine)"> Field requires at least one number</p>
+
+  <div *ngIf="farConverted" class="answer">{{farenhit}} degress Celsius is {{farConverted}} Farenhit</div>
+</div>
