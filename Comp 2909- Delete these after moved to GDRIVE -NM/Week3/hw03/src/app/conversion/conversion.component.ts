@@ -22,9 +22,6 @@ export class ConversionComponent  {
     this.remoteService = _remoteService;
   }
 
-  postFeedback(){
-
-  }
 
   convertToC(temp:string, myForm:FormGroup){
     console.log(temp);

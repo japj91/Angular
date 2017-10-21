@@ -1,4 +1,27 @@
+<br>
 
-Email: <input [(ngModel)]="emailAddress"><br/>
-Feedback:  <input [(ngModel)]="feedbackMsg">
-<button (click)="postFeedback()">Submit Feedback</button>
+<form #myForm="ngForm" (submit)="postFeedback(myForm)">
+
+  <div>
+    <p class="display">Your Email Address:</p>
+    <input type=text pattern=".+\@.+\..+" required [(ngModel)]="emailAddress" name="field1" #field1="ngModel"
+           class="display">
+
+    <p *ngIf="field1?.errors?.pattern && field1.touched" class="error">Not a valid email</p>
+    <p *ngIf="(field1?.errors?.required && !field1.pristine) || (myForm.submitted && (field1.untouched && field1.invalid && !field1.pristine))" class="error">This Field cannot be empty</p>
+  </div>
+
+  <br/>
+
+  <div>
+    <p class="display"> Feedback:</p>
+    <textarea type=text required [(ngModel)]="feedbackMsg" name="field2" #field2="ngModel" class="display" id="longInp" rows="5" cols="60"></textarea>
+    <p *ngIf="(field2?.errors?.required && !field2.pristine) || (myForm.submitted && (field2.untouched && field2.invalid && !field2.pristine ))" class="error"> Feedback cannot be empty </p>
+  </div>
+
+  <br>
+
+  <button type="submit">Submit Feedback</button>
+
+  <div *ngIf="userResponse && myForm.pristine" id="response">{{userResponse}}</div>
+</form>

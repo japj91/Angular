@@ -42,6 +42,22 @@ export class MyremoteserviceService {
       .catch(this.handleError);
   }
 
+  postName(_feedback: Object): Observable<Comment[]> {
+    let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    let options = new RequestOptions({ headers: headers });
+    let url     = this.site + 'api/Feedback';
+
+    let params: URLSearchParams = new URLSearchParams();
+
+    let content = new URLSearchParams();
+    content.set('Email',  _feedback["Email"]);
+    content.set('Message', _feedback["Message"]);
+
+    return this.http.post(url, content.toString(), options)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
   private extractData(res: Response) {
     let body = res.json();
     return JSON.parse(body);
