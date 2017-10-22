@@ -1,0 +1,12 @@
+.display{
+  display: block;
+}
+
+.error{
+  color: red;
+}
+
+#response{
+  font-size: 02vw;
+  color: royalblue;
+}
